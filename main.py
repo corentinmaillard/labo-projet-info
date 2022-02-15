@@ -22,7 +22,17 @@ def roots(a, b, c):
 	Post: Returns a tuple with zero, one or two elements corresponding
 		to the roots of the ax^2 + bx + c polynomial.
 	"""
-	pass
+	delta = b*b - 4*a*c
+	print(delta)
+	if delta > 0:
+		root1 = (-b + delta)/(2*a)
+		root2 = (-b - delta)/(2*a)
+		return [root1,root2]
+	elif delta == 0:
+		root = -b/(2*a)
+		return root
+	elif delta < 0:
+		return "Racine non réelle"
 
 def integrate(function, lower, upper):
 	"""Approximates the integral of a fonction between two bounds
@@ -41,5 +51,5 @@ def integrate(function, lower, upper):
 
 if __name__ == '__main__':
 	print(fact(5))
-	print(roots(1, 0, 1))
+	print(roots(1, -3, 2))
 	print(integrate('x ** 2 - 1', -1, 1))

@@ -1,13 +1,10 @@
 import main
 import pytest
 
-def test_fact():
-    # À compléter...
-    pass
-
 def test_roots():
-    # À compléter...
-    pass
+    assert main.roots(1, 2, 1)==-1
+    assert main.roots(1, 0, 1)=="Racine non réelle"
+    assert main.roots(1, -3, 2)==[2.0, 1.0]
 
 def test_integrate():
     # À compléter...
