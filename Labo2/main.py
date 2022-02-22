@@ -41,7 +41,10 @@ def read(lignes):
         list = p.findall(ligne)
         listString=""
         for element in list:
-            listString+=str(element)+", "
+            if (element == list[len(list)-1]):
+                listString+=element
+            else:
+                listString+=str(element)+", "
         print("Line "+stringLine+": "+listString)
         refligne+=1
 
