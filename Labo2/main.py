@@ -55,8 +55,8 @@ filin.close()
 
 #ex 3
 def readURL(url):
-    
-    pattern = r'(?P<Protocole>[a-z]{4,5})://(?P<Domain>[a-zA-Z]+\.[a-zA-Z]+\.[a-zA-Z]+)/(?P<Path>[^\s]+)'
+    pattern = r'(?P<Protocole>http|https)://(?P<Domain>[^/]+)/(?P<Path>[^\s]+)'
+    #pattern = r'(?P<Protocole>[a-z]{4,5})://(?P<Domain>[a-zA-Z]+\.[a-zA-Z]+\.[a-zA-Z]+)/(?P<Path>[^\s]+)'
 
     p = re.compile(pattern)
     m = p.match(url)
