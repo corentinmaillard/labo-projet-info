@@ -33,7 +33,7 @@ print(p.match('C:\\'))
 
 #ex 2
 def read(lignes):
-    pattern = r'\d+'
+    pattern = r'-?\d+|\+?\d+'
     p = re.compile(pattern)
     refligne = 1
     for ligne in lignes:
@@ -51,3 +51,16 @@ def read(lignes):
 filin = open("text.txt", "r")
 read(filin.readlines())
 filin.close()
+
+#ex 3
+def readURL(url):
+    #pattern = r'^(?P<Protocole>[a-z]{4})://(?P<Domain>[a-zA-Z]{3}\.[a-zA-Z]+\.[a-zA-Z]+)/(?P<Path>[a-z]+)$'
+    pattern = r'^(?P<Protocole>[a-z]{4,5})://(?P<Domain>[a-zA-Z]+\.[a-zA-Z]+\.[a-zA-Z]+)/(?P<Path>[^\s]+)'
+
+    p = re.compile(pattern)
+    m = p.match(url)
+    if m is not None:
+        print("Protocole: "+m.group(1))
+        print("Domain: "+m.group(2))
+        print("Path: "+m.group(3))
+readURL("http://www.this.is/big/shit")
