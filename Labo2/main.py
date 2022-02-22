@@ -22,3 +22,9 @@ p = re.compile(pattern)
 
 print(p.match('1234AFD'))
 print(p.match('1GHT534'))
+
+#ex 1.d
+pattern = r'C:\\'
+p = re.compile(pattern)
+
+print(p.match('C:\\'))
