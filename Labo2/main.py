@@ -45,7 +45,8 @@ def read(lignes):
                 listString+=element
             else:
                 listString+=str(element)+", "
-        print("Line "+stringLine+": "+listString)
+        if(listString != ""):
+            print("Line "+stringLine+": "+listString)
         refligne+=1
 
 filin = open("text.txt", "r")
@@ -54,8 +55,8 @@ filin.close()
 
 #ex 3
 def readURL(url):
-    #pattern = r'^(?P<Protocole>[a-z]{4})://(?P<Domain>[a-zA-Z]{3}\.[a-zA-Z]+\.[a-zA-Z]+)/(?P<Path>[a-z]+)$'
-    pattern = r'^(?P<Protocole>[a-z]{4,5})://(?P<Domain>[a-zA-Z]+\.[a-zA-Z]+\.[a-zA-Z]+)/(?P<Path>[^\s]+)'
+    
+    pattern = r'(?P<Protocole>[a-z]{4,5})://(?P<Domain>[a-zA-Z]+\.[a-zA-Z]+\.[a-zA-Z]+)/(?P<Path>[^\s]+)'
 
     p = re.compile(pattern)
     m = p.match(url)
@@ -63,4 +64,10 @@ def readURL(url):
         print("Protocole: "+m.group(1))
         print("Domain: "+m.group(2))
         print("Path: "+m.group(3))
+
 readURL("http://www.this.is/big/shit")
+
+# MOT CROISE 3
+
+def checkregexcrossword(linesregex ,columnsregex ,answer ):
+    pass
