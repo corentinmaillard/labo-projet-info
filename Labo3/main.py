@@ -1,10 +1,14 @@
 #ex 1.1
-def call(f):
-    f()
+def call(g, a, b):
+    #f()
+    return g(a, b)
 
 def hello():
     print('hello')
 
-call(hello)
+def add(a, b):
+    return a + b
+
+print(call(add, 2, 9))
 
 #ex 1.2
