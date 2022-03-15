@@ -1,4 +1,6 @@
 import socket
+import time
+import threading
 
 def Premier():
     s = socket.socket()
@@ -66,3 +68,19 @@ def SERVEUR():
     #    with client:
     #        message = client.recv(2048).decode()
 
+
+def hello():
+    while True:
+        time.sleep(1)
+        print('hello')
+
+#on va utiliser les thread pour pouvoir séparer l'écoute de la réponse
+#daemon=True fait que le thread n'empêchera pas la suite de s'éxecuter (en gros on fait des actions en parallèle)
+#et il ne s'arrêtera que quand le thread principale se termine
+thread = threading.Thread(target=hello, daemon=True)
+
+#on démare le thread
+thread.start()
+while True:
+    time.sleep(1)
+    print('bye')
